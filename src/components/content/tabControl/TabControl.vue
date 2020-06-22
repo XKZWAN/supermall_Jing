@@ -26,7 +26,7 @@ export default {
   methods: {
     itemClick(index) {
       this.currentIndex = index;
-      // 内部发生事件往外传
+      // 内部发生事件往外传,自定义事件
       this.$emit('tabClick', index)
     }
   },

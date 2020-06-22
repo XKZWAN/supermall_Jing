@@ -1,4 +1,4 @@
-import { request } from "./request";
+import { request, request2 } from "./request";
 
 // 对首页数据请求的封装
 export function getHomeMultidata() {
@@ -7,12 +7,12 @@ export function getHomeMultidata() {
   })
 }
 
-export function getHomeGoods(type, page) {
-  return request({
+export function getHomeGoods(type, pageIndex) {
+  return request2({
     url: '/home/data',
-    parms: {
+    params: {
       type,
-      page
+      pageIndex
     }
   })
 }

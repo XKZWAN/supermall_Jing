@@ -29,3 +29,24 @@ export function request(config) {
   return instance(config)
 
 }
+export function request2(config) {
+  const instance2 = axios.create({
+    baseURL: 'http://127.0.0.1:1000',
+    timeout: 5000
+  })
+  instance2.interceptors.request.use(config => {
+    return config
+  }, err => {
+    console.log(err);
+  })
+
+  // 2.2 响应拦截
+  instance2.interceptors.response.use(res => {
+    // console.log(res);
+    return res.data //拦截了数据之后要把数据返回回去
+  }, err => {
+    console.log(err);
+  })
+
+  return instance2(config)
+}

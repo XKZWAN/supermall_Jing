@@ -122,7 +122,7 @@ export default {
     // 操作DOM，在DOM前后添加Slide
     handleDom: function() {
       // 1. 获取要操作的元素  querySelector() 方法仅仅返回匹配指定选择器的第一个元素。
-      let swiperEl = document.querySelector(".swiper");
+      let swiperEl = document.querySelector(".swiper"); //最好不要这样做
       let slidesEls = swiperEl.getElementsByClassName("slide");
       // 2. 保存个数
       this.slideCount = slidesEls.length;
@@ -205,6 +205,7 @@ export default {
     // 控制上一个，下一个
     previous: function() {
       this.changeItem(-1);
+      console.log(this.changeItem);
       
     },
     next: function() {
